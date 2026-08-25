@@ -23,6 +23,11 @@ dependencies = [
     "uvicorn[standard]>=0.34.0",
 ]
 
+[dependency-groups]
+dev = [
+    "ruff>=0.16.4",
+]
+
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
