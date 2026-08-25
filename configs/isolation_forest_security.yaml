@@ -1,0 +1,28 @@
+experiment:
+  name: "isolation_forest_security_v2"
+  description: "Threshold-Tuned Isolation Forest model on security_v2 telemetry"
+  seed: 42
+
+dataset:
+  version: "security_v2"
+  path: "data/features/train.parquet"
+  test_path: "data/features/test.parquet"
+
+features:
+  version: "v2"
+
+model:
+  type: "isolation_forest"
+  n_estimators: 250
+  max_samples: 0.8
+  contamination: "auto"
+  max_features: 1.0
+  bootstrap: false
+  random_state: 42
+
+evaluation:
+  target_recall: 0.90
+  max_fpr: 0.05
+  cost_fp: 1.0
+  cost_fn: 20.0
+  bootstrap_iterations: 500

@@ -1,0 +1,30 @@
+feature_set:
+  version: "v1"
+  scenario: "security"
+  description: "Core window aggregations and behavioral divergence features"
+
+windows:
+  short_window_minutes: 5
+  medium_window_minutes: 60
+
+features:
+  - failed_logins_5m
+  - failed_logins_1h
+  - successful_logins_1h
+  - distinct_users_per_ip_10m
+  - distinct_hosts_per_user_1h
+  - events_per_user_5m
+  - is_new_source_ip
+  - is_new_device
+  - login_hour
+  - distance_from_typical_hour
+  - event_rate_ratio
+  - failure_ratio
+  - bytes_sent_log
+  - bytes_received_log
+  - session_duration_log
+
+split:
+  train_days: 20
+  val_days: 5
+  test_days: 5

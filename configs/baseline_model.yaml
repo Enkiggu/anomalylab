@@ -1,0 +1,24 @@
+experiment:
+  name: "baseline_security_v2"
+  description: "Robust Z-Score statistical baseline model on security_v2 telemetry"
+  seed: 42
+
+dataset:
+  version: "security_v2"
+  path: "data/features/train.parquet"
+  test_path: "data/features/test.parquet"
+
+features:
+  version: "v2"
+
+model:
+  type: "statistical_baseline"
+  method: "robust_mad"
+  top_k_signals: 3
+
+evaluation:
+  target_recall: 0.90
+  max_fpr: 0.05
+  cost_fp: 1.0
+  cost_fn: 20.0
+  bootstrap_iterations: 500
