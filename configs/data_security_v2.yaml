@@ -1,0 +1,11 @@
+version: "security_v2"
+rows: 50000
+anomaly_rate: 0.02
+seed: 42
+start_date: "2026-08-01T00:00:00Z"
+duration_days: 30
+users_count: 500
+hosts_count: 100
+privileged_ratio: 0.05
+output_path: "data/raw/security_events_v2.parquet"
+manifest_path: "data/raw/security_manifest_v2.json"

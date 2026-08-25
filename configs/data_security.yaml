@@ -1,0 +1,23 @@
+dataset:
+  scenario: security
+  name: security_telemetry_2026
+  version: "security-2026-v1"
+  rows: 50000
+  anomaly_rate: 0.02
+  seed: 42
+  start_date: "2026-08-01T00:00:00Z"
+  duration_days: 30
+
+entities:
+  users_count: 500
+  hosts_count: 100
+  privileged_ratio: 0.05
+  new_device_prob: 0.03
+  new_source_ip_prob: 0.02
+
+anomaly_injection:
+  brute_force_ratio: 0.35
+  unusual_login_time_ratio: 0.25
+  new_device_login_ratio: 0.20
+  high_velocity_ratio: 0.15
+  credential_stuffing_ratio: 0.05
