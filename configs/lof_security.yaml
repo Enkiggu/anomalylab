@@ -1,0 +1,26 @@
+experiment:
+  name: "lof_security_v2"
+  description: "Local Outlier Factor novelty detection on security_v2 telemetry"
+  seed: 42
+
+dataset:
+  version: "security_v2"
+  path: "data/features/train.parquet"
+  test_path: "data/features/test.parquet"
+
+features:
+  version: "v2"
+
+model:
+  type: "local_outlier_factor"
+  n_neighbors: 35
+  contamination: 0.02
+  algorithm: "auto"
+  metric: "minkowski"
+
+evaluation:
+  target_recall: 0.90
+  max_fpr: 0.05
+  cost_fp: 1.0
+  cost_fn: 20.0
+  bootstrap_iterations: 500

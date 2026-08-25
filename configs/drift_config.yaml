@@ -1,0 +1,19 @@
+drift:
+  numerical_tests:
+    - name: "kolmogorov_smirnov"
+      p_value_threshold: 0.05
+    - name: "population_stability_index"
+      warning_threshold: 0.10
+      critical_threshold: 0.25
+    - name: "jensen_shannon"
+      warning_threshold: 0.10
+      critical_threshold: 0.20
+
+  categorical_tests:
+    - name: "chi_square"
+      p_value_threshold: 0.05
+
+  score_drift:
+    psi_warning: 0.10
+    psi_critical: 0.25
+    mean_shift_std_threshold: 0.5
