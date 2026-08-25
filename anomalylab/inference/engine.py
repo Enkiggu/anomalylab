@@ -32,9 +32,7 @@ class ReferenceRiskModel(BaseAnomalyModel):
         self.feature_names = feature_names
         self.is_fitted = True
 
-    def fit(
-        self, X: np.ndarray, feature_names: list[str] | None = None
-    ) -> "ReferenceRiskModel":
+    def fit(self, X: np.ndarray, feature_names: list[str] | None = None) -> "ReferenceRiskModel":
         if feature_names is not None:
             self.feature_names = list(feature_names)
         self.is_fitted = True
